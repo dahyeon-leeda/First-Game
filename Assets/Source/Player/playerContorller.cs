@@ -31,10 +31,10 @@ public class playerContorller : MonoBehaviour
 
     void Update()
     {
-        // 1. Update() ÇÔ¼ö¿¡¼­ Physics2D.OverlapCircle() ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ÇÃ·¹ÀÌ¾î°¡ ¶¥¿¡ ´ê¾Æ ÀÖ´ÂÁö È®ÀÎÇÏ°í, isGrounded º¯¼ö¸¦ ¾÷µ¥ÀÌÆ®ÇÕ´Ï´Ù.
+        // 1. Update() í•¨ìˆ˜ì—ì„œ Physics2D.OverlapCircle() í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ í”Œë ˆì´ì–´ê°€ ë•…ì— ë‹¿ì•„ ìˆëŠ”ì§€ í™•ì¸í•˜ê³ , isGrounded ë³€ìˆ˜ë¥¼ ì—…ë°ì´íŠ¸í•©ë‹ˆë‹¤.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // 2. Update() ÇÔ¼ö¿¡¼­ ÇÃ·¹ÀÌ¾î°¡ ¶¥¿¡ ´ê¾Æ ÀÖ´ÂÁö È®ÀÎÇÏ¿© isGrounded º¯¼ö¸¦ ¾÷µ¥ÀÌÆ®ÇÏ°í, Á¡ÇÁ Ä«¿îÆ®¸¦ ÃÊ±âÈ­ÇÕ´Ï´Ù.
+        // 2. Update() í•¨ìˆ˜ì—ì„œ í”Œë ˆì´ì–´ê°€ ë•…ì— ë‹¿ì•„ ìˆëŠ”ì§€ í™•ì¸í•˜ì—¬ isGrounded ë³€ìˆ˜ë¥¼ ì—…ë°ì´íŠ¸í•˜ê³ , ì í”„ ì¹´ìš´íŠ¸ë¥¼ ì´ˆê¸°í™”í•©ë‹ˆë‹¤.
         if (isGrounded && rd.linearVelocity.y <= 0)
         {
             jumpCount = 0;
@@ -69,14 +69,14 @@ public class playerContorller : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        // 1. Input SystemÀ» »ç¿ëÇÏ¿© ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿ ÀÔ·ÂÀ» ¹Ş¾Æ moveInput º¯¼ö¿¡ ÀúÀåÇÕ´Ï´Ù.
+        // 1. Input Systemì„ ì‚¬ìš©í•˜ì—¬ í”Œë ˆì´ì–´ì˜ ì´ë™ ì…ë ¥ì„ ë°›ì•„ moveInput ë³€ìˆ˜ì— ì €ì¥í•©ë‹ˆë‹¤.
         Vector2 inputVector = value.Get<Vector2>();
         moveInput = inputVector.x;
     }
 
     private void Flip()
     {
-        // 1. ÇÃ·¹ÀÌ¾î°¡ ÀÌµ¿ ¹æÇâÀ» ¹Ù²Ü ¶§¸¶´Ù Flip() ÇÔ¼ö¸¦ È£ÃâÇÏ¿© Ä³¸¯ÅÍÀÇ ¹æÇâÀ» ÀüÈ¯ÇÕ´Ï´Ù.
+        // 1. í”Œë ˆì´ì–´ê°€ ì´ë™ ë°©í–¥ì„ ë°”ê¿€ ë•Œë§ˆë‹¤ Flip() í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ì—¬ ìºë¦­í„°ì˜ ë°©í–¥ì„ ì „í™˜í•©ë‹ˆë‹¤.
         if (isFacingRight && moveInput < 0f || !isFacingRight && moveInput > 0f)
         {
             isFacingRight = !isFacingRight;
@@ -88,7 +88,7 @@ public class playerContorller : MonoBehaviour
 
     void MoveCharacter()
     {
-        // 1. MoveCharacter() ÇÔ¼ö¿¡¼­ Rigidbody2DÀÇ velocity¸¦ »ç¿ëÇÏ¿© ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿À» ±¸ÇöÇÕ´Ï´Ù.
+        // 1. MoveCharacter() í•¨ìˆ˜ì—ì„œ Rigidbody2Dì˜ velocityë¥¼ ì‚¬ìš©í•˜ì—¬ í”Œë ˆì´ì–´ì˜ ì´ë™ì„ êµ¬í˜„í•©ë‹ˆë‹¤.
         rd.linearVelocity = new Vector2(moveInput * moveSpeed, rd.linearVelocity.y);
     }
 
@@ -99,13 +99,13 @@ public class playerContorller : MonoBehaviour
         
         if (isGrounded)
         {
-            // 1. OnJump() ÇÔ¼ö¿¡¼­ ÇÃ·¹ÀÌ¾î°¡ Á¡ÇÁÇÒ ¶§¸¶´Ù jumpCount º¯¼ö¸¦ Áõ°¡½ÃÅ°°í, ÃÖ´ë 2È¸±îÁö Á¡ÇÁÇÒ ¼ö ÀÖµµ·Ï ±¸ÇöÇÕ´Ï´Ù.
+            // 1. OnJump() í•¨ìˆ˜ì—ì„œ í”Œë ˆì´ì–´ê°€ ì í”„í•  ë•Œë§ˆë‹¤ jumpCount ë³€ìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¤ê³ , ìµœëŒ€ 2íšŒê¹Œì§€ ì í”„í•  ìˆ˜ ìˆë„ë¡ êµ¬í˜„í•©ë‹ˆë‹¤.
             rd.linearVelocity = new Vector2(rd.linearVelocity.x, jumpForce);
             jumpCount = 1;
         }
         else if (jumpCount == 1)
         {
-            // 2. OnJump() ÇÔ¼ö¿¡¼­ ÇÃ·¹ÀÌ¾î°¡ °øÁß¿¡¼­ Á¡ÇÁÇÒ ¶§, ´ë½Ã ¹æÇâ°ú ÈûÀ» Àû¿ëÇÏ¿© °øÁß ´ë½Ã¸¦ ±¸ÇöÇÕ´Ï´Ù.
+            // 2. OnJump() í•¨ìˆ˜ì—ì„œ í”Œë ˆì´ì–´ê°€ ê³µì¤‘ì—ì„œ ì í”„í•  ë•Œ, ëŒ€ì‹œ ë°©í–¥ê³¼ í˜ì„ ì ìš©í•˜ì—¬ ê³µì¤‘ ëŒ€ì‹œë¥¼ êµ¬í˜„í•©ë‹ˆë‹¤.
             rd.linearVelocity = new Vector2(rd.linearVelocity.x, jumpForce);
 
             jumpCount = 2;
