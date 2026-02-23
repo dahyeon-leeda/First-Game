@@ -40,6 +40,11 @@ public class EnemyMove1 : MonoBehaviour
           CancelInvoke();
           Invoke("Think", 3);
         }
+        //보는 방향으로 고개 돌리기
+        if (rigid.linearVelocity.x != 0)
+        {
+            spriter.flipX = rigid.linearVelocity.x < 0;
+        }
         
 }
     void Think()
