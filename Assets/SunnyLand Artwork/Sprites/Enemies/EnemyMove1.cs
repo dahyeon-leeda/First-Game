@@ -20,7 +20,7 @@ public class EnemyMove1 : MonoBehaviour
         Think();
         Invoke("Think", 3);
         spriter = GetComponent<SpriteRenderer>();
-        //layer이름 확인
+        //layer이름 확인(바닥에 안떨어지게1번)
         int platformLayer = LayerMask.NameToLayer("Platform");
         Debug.Log("Platform layer number: " + platformLayer);
     }
@@ -30,7 +30,7 @@ public class EnemyMove1 : MonoBehaviour
     {
         //move
         rigid.linearVelocity = new Vector2(nextMove, rigid.linearVelocity.y);
-        //platform check
+        //platform check(바닥에 안떨어지게2번)
         Vector2 frontVec = new Vector2(rigid.position.x + nextMove*0.3f, rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Platform"));
