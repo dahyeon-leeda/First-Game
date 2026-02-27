@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     void PlayerReposition()
     {
-        GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
+        GameObject spawnPoint = GameObject.FindWithTag("spawnPoint");
 
         if (spawnPoint == null)
         {
