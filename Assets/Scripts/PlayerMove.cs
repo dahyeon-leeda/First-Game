@@ -18,6 +18,11 @@ public class PlayerMove : MonoBehaviour
         {
             gameManager.MoveToLevel1Random();
         }
+        else if (collision.CompareTag("shop"))
+        {
+            Debug.Log("shop에 닿음");
+            gameManager.PlayerPositionShop();
+        }
     }
 
     public void VelocityZero()

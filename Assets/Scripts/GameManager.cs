@@ -44,4 +44,12 @@ public class GameManager : MonoBehaviour
         player.transform.position = spawnPoint.transform.position;
         player.VelocityZero();
     }
+
+    public void PlayerPositionShop()
+    {
+        GameObject shopSpawnPoint = GameObject.FindWithTag("shopSpawnPoint");
+
+        player.transform.position = shopSpawnPoint.transform.position;
+        player.VelocityZero();
+    }
 }
