@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 575222314}
   - component: {fileID: 575222315}
   - component: {fileID: 575222316}
+  - component: {fileID: 575222317}
   m_Layer: 3
   m_Name: player
   m_TagString: Untagged
@@ -462,7 +463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10031a6b0fd200f4a998cefb9430d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerContorller
-  moveSpeed: 5
   jumpForce: 5
   dashForce: 8
   groundCheck: {fileID: 1331667138}
@@ -470,6 +470,17 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  attackStopDuration: 0.3
+  attackPrefab: {fileID: 5611832655611900815, guid: 3917067ca09c46c4abc8c223f2172072, type: 3}
+  attackDamage: 10
+  attackCooldown: 0.5
+  attackManaCost: 5
+  spawnOffset: {x: 1, y: 0.8}
+  fallVelocity: {x: 0, y: -5}
+  effectLifeTime: 2
 --- !u!114 &575222315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +533,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &575222317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575222309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99e446f07cae534489b5f5195c5ecad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthComponent
+  maxHealth: 100
+  currentHealth: 0
+  healthRegenRate: 1
+  maxMana: 100
+  currentMana: 0
+  manaRegenRate: 1
+  moveSpeed: 7
+  attack: 10
+  defense: 5
 --- !u!1 &575235289
 GameObject:
   m_ObjectHideFlags: 0
