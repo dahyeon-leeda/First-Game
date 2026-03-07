@@ -1926,11 +1926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0225300beb00841b03ecffeca9baa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  stages:
-  - {fileID: 1098044111}
+  level0Map: {fileID: 1098044111}
+  level1Maps:
   - {fileID: 1832028036}
   - {fileID: 1115649558}
-  player: {fileID: 0}
+  player: {fileID: 1416089898}
 --- !u!4 &315441644
 Transform:
   m_ObjectHideFlags: 0
@@ -1959,7 +1959,7 @@ GameObject:
   - component: {fileID: 490225978}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Finish
+  m_TagString: shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
