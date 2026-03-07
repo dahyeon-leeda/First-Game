@@ -26,7 +26,7 @@ public class EnemyMove2 : MonoBehaviour
         movementFlag = 2; //오른쪽부터 움직이기
 
         //layer이름 확인(안떨어지기 1)
-        int platformLayer = LayerMask.NameToLayer("Platform");
+        int platformLayer = LayerMask.NameToLayer("Ground");
         Debug.Log("Platform layer number: " + platformLayer);
     }
 
@@ -43,7 +43,7 @@ public class EnemyMove2 : MonoBehaviour
         
         Vector2 frontVec = new Vector2(rigid.position.x + dir*0.3f, rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Platform"));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Ground"));
        if (rayHit.collider == null)
         {
           movementFlag =(movementFlag == 1)? 2 : 1;
