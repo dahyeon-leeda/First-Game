@@ -6,6 +6,7 @@ TagManager:
   tags:
   - shopSpawnPoint
   - shop
+  - spawnPoint
   layers:
   - Default
   - TransparentFX
