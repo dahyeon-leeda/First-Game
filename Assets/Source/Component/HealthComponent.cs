@@ -33,6 +33,8 @@ public class HealthComponent : MonoBehaviour
         float effectiveDamage = damage - defense;
         currentHealth -= effectiveDamage;
         Debug.Log("Remaining health: " + currentHealth.ToString("F1"));
+         // 몬스터가 맞았다고 알림
+    SendMessage("OnHit", SendMessageOptions.DontRequireReceiver);
         if (currentHealth <= 0)
         {
             Die();
@@ -41,8 +43,9 @@ public class HealthComponent : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("YOUDIE");
-        Destroy(gameObject);
+    Debug.Log("YOUDIE");
+    SendMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
+    Destroy(gameObject, 2f);
     }
 
     public void RegenerateResources()

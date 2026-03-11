@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2806514128372592622}
   - component: {fileID: 2310610109136047450}
   - component: {fileID: 4816425677989267977}
+  - component: {fileID: -4429157222888352068}
   m_Layer: 0
   m_Name: enemy3
   m_TagString: Untagged
@@ -198,3 +199,24 @@ MonoBehaviour:
   chaseSpeed: 2
   speed: 1
   nextMove: 0
+--- !u!114 &-4429157222888352068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348552224959688954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99e446f07cae534489b5f5195c5ecad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthComponent
+  maxHealth: 100
+  currentHealth: 0
+  healthRegenRate: 1
+  maxMana: 100
+  currentMana: 0
+  manaRegenRate: 1
+  moveSpeed: 0
+  attack: 10
+  defense: 5
